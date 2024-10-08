@@ -9,25 +9,25 @@ const students = [
   ];
 
 //Part 1
-students.forEach((student) => console.log(student.name, student.grade));
+students.forEach(student => console.log(student.name, student.grade));
 
 //Part 2 #1
 const topStudents = students
-    .filter((student) => student.grade > 80);
+    .filter(student => student.grade > 80);
 console.log(topStudents);
 
 //Part 2 #2
 const youngStudents = students
-    .filter((student) => student.age <= 21);
+    .filter(student => student.age <= 21);
 console.log(youngStudents);
 
 //Part 3 #1
 topStudents
-    .forEach((student) => console.log(student.name));
+    .forEach(student => console.log(student.name));
 
 //Part 3 #2
 youngStudents
-    .forEach((student) => console.log(student.name));
+    .forEach(student => console.log(student.name));
 
 
 
@@ -43,5 +43,37 @@ const products = [
     { name: 'Desk', price: 450, category: 'Furniture', rating: 4.8 }
   ];
 
-//Part 1
-products.forEach((product) => console.log(product.name, product.price))
+//Part 1 #1
+products
+    .forEach(product => console.log(product.name, product.price))
+
+//Part 1 #2
+products
+    .forEach(product => console.log(product.price * 1.1))
+
+//Part 1 #3
+const categories = []; //empty array
+products
+    .forEach(product => {
+        if (!categories.includes(product.category)) {
+        categories.push(product.category);
+        }
+    }
+); 
+console.log('Unique Categories:', categories);
+//for each product, check if the category is in the array, if not, add it.
+
+//Part 2 #1
+const electronics = products
+    .filter(product => product.category === 'Electronics');
+console.log('Electronics:', electronics);
+
+//Part 2 #2
+const expensiveProducts = products
+    .filter(product => product.price > 300);
+console.log('Expensive Products:', expensiveProducts);
+
+//Part 2 #3
+const highlyratedProducts = products
+    .filter(product => product.rating >= 4.5);
+console.log('Highly Rated Products:', highlyratedProducts);
