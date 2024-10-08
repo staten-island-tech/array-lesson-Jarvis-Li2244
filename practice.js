@@ -77,3 +77,12 @@ console.log('Expensive Products:', expensiveProducts);
 const highlyratedProducts = products
     .filter(product => product.rating >= 4.5);
 console.log('Highly Rated Products:', highlyratedProducts);
+
+//Part 3 #1
+highlyratedProducts
+    .forEach(product => console.log(product.name))
+
+//Part 3 #2
+electronics
+    .filter(product => product.price < 1000)
+    .forEach(product => console.log(product))
