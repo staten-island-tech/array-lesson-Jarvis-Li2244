@@ -44,3 +44,4 @@ const products = [
   ];
 
 //Part 1
+products.forEach((product) => console.log(product.name, product.price))
